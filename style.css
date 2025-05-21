@@ -1,0 +1,365 @@
+
+        body {
+            padding: 20px;
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        
+        .political-box {
+            position: relative;
+            border-radius: 18px;
+            padding: 25px;
+            margin: 30px auto;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            color: #333;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            max-width: 850px;
+            background: white;
+            line-height: 1.6;
+            border-width: 8px;
+            border-style: double;
+        }
+        
+        .political-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .political-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+        }
+        
+        .political-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .political-signature {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 22px;
+            margin-top: 20px;
+            text-align: right;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 徽标样式 */
+        .party-logo {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.35);
+            z-index: 3;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .party-logo:hover {
+            transform: scale(1.12) rotate(8deg);
+        }
+        
+        /* 边框内侧装饰文字 */
+        .border-inset-text {
+            position: absolute;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            white-space: nowrap;
+            padding: 2px 12px;
+            border-radius: 12px;
+            opacity: 0.9;
+            z-index: 2;
+            background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+            backdrop-filter: blur(3px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        /* 川普宝宝妈妈爱你 */
+        .trump-box {
+            border-color: #E31937;
+            background: linear-gradient(145deg, #FFF 0%, #FEF0F0 100%);
+            padding-left: 90px;
+        }
+        
+        .trump-logo {
+            top: 25px;
+            left: 20px;
+            border: 3px solid #E31937;
+            box-shadow: 0 7px 20px rgba(227, 25, 55, 0.35);
+            background-image: url('republican-solid.svg');
+        }
+        
+        .trump-signature {
+            color: #E31937;
+            text-shadow: 1px 1px 2px rgba(227, 25, 55, 0.25);
+        }
+
+        .trump-highlight {
+            background: linear-gradient(to right, rgba(255, 30, 30, 0.3) 0%, rgba(30, 144, 255, 0) 90%);
+            padding: 0 10px 3px 6px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .republican-elephant {
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-size: 24px;
+            color: #E31937;
+            opacity: 0.15;
+            z-index: 1;
+        }
+        
+        .trump-border-top {
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #E31937;
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+        }
+        
+        .trump-border-bottom {
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #E31937;
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+        }
+        
+        /* 登登宝宝妈妈爱你 */
+        .biden-box {
+            border-color: #0A4D8C #1E90FF #1E90FF #0A4D8C;
+            background: linear-gradient(145deg, #F5FAFF 0%, #E0EDFA 100%);
+            padding-right: 80px;
+        }
+        
+        .biden-logo {
+            top: 25px;
+            right: 20px;
+            border: 3px solid #0A4D8C;
+            box-shadow: 0 7px 20px rgba(10, 77, 140, 0.35);
+            background-image: url('democrat-solid.svg');
+        }
+        
+        .biden-signature {
+            color: #0A4D8C;
+            text-shadow: 1px 1px 2px rgba(10, 77, 140, 0.15);
+        }
+        
+        .democrat-donkey {
+            position: absolute;
+            bottom: 15px;
+            left: 25px;
+            font-size: 24px;
+            color: #0A4D8C;
+            opacity: 0.15;
+            z-index: 1;
+        }
+        
+        .biden-highlight {
+            background: linear-gradient(to right, rgba(30, 144, 255, 0.3) 0%, rgba(30, 144, 255, 0) 90%);
+            padding: 0 10px 3px 6px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .biden-border-top {
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #0A4D8C;
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+        }
+        
+        .biden-border-bottom {
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #0A4D8C;
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+        }
+        
+        /* 川拜99！ */
+        .trump-love-biden-box {
+            border-color: #8A2BE2;
+            background: linear-gradient(145deg, #F9F0FF 0%, #F0E0FF 100%);
+            padding: 25px 25px 25px 90px;
+        }
+        
+        .trump-love-biden-logo {
+            top: 25px;
+            left: 20px;
+            border: 3px solid #8A2BE2;
+            box-shadow: 0 7px 20px rgba(138, 43, 226, 0.35);
+            background-image: url('republican-solid.svg');
+        }
+        
+        .trump-love-biden-signature {
+            color: #8A2BE2;
+            text-shadow: 1px 1px 2px rgba(138, 43, 226, 0.25);
+        }
+        
+        .party-combined {
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-size: 24px;
+            color: #8A2BE2;
+            opacity: 0.15;
+            z-index: 1;
+        }
+        
+        .trump-love-biden-highlight {
+            background: linear-gradient(to right, rgba(138, 43, 226, 0.25) 0%, rgba(138, 43, 226, 0) 90%);
+            padding: 0 10px 3px 6px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .combined-border-top {
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8A2BE2;
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+        }
+        
+        .combined-border-bottom {
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8A2BE2;
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+        }
+        
+        /* 移动端适配问题 */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .political-box {
+                padding: 20px;
+                margin: 25px auto;
+                border-width: 6px;
+            }
+            
+            .trump-box {
+                padding-left: 75px;
+            }
+            
+            .biden-box {
+                padding-right: 70px;
+            }
+            
+            .party-logo {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .trump-logo {
+                top: 20px;
+                left: 15px;
+            }
+            
+            .biden-logo {
+                top: 20px;
+                right: 15px;
+            }
+            
+            .trump-love-biden-box {
+                padding: 20px 20px 20px 75px;
+            }
+            
+            .border-inset-text {
+                font-size: 8px;
+                padding: 1px 8px;
+                letter-spacing: 1px;
+            }
+            
+            .political-signature {
+                font-size: 20px;
+                margin-top: 15px;
+            }
+            
+            .republican-elephant,
+            .democrat-donkey,
+            .party-combined {
+                font-size: 20px;
+                bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .political-box {
+                padding: 18px;
+                border-radius: 14px;
+                border-width: 5px;
+                margin: 20px auto;
+            }
+            
+            .trump-box {
+                padding-left: 65px;
+            }
+            
+            .biden-box {
+                padding-right: 60px;
+            }
+            
+            .party-logo {
+                width: 40px;
+                height: 40px;
+                border-width: 2px;
+            }
+            
+            .trump-logo {
+                top: 15px;
+                left: 10px;
+            }
+            
+            .biden-logo {
+                top: 15px;
+                right: 10px;
+            }
+            
+            .trump-love-biden-box {
+                padding: 18px 18px 18px 65px;
+            }
+            
+            .border-inset-text {
+                font-size: 7px;
+                padding: 1px 6px;
+                border-radius: 10px;
+            }
+            
+            .political-signature {
+                font-size: 18px;
+            }
+            
+            .political-content p {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+        }
